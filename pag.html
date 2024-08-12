@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Cristiana</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f2f2f2;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #26007e;
+        }
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+        .problem-list {
+            margin: 20px 0;
+            padding-left: 0;
+        }
+        .problem-list li {
+            list-style: none;
+            background-color: #2a70c0;
+            color: white;
+            margin: 5px 0;
+            padding: 10px;
+            border-radius: 4px;
+            cursor: pointer;
+            text-align: center;
+            transition: background-color 0.3s ease;
+        }
+        .problem-list li:hover {
+            background-color: #45a049;
+        }
+        .result {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+        .result p {
+            font-size: 18px;
+        }
+        .verses {
+            margin-top: 10px;
+            padding: 15px;
+            background-color: #e7ffe7;
+            border-left: 5px solid #4CAF50;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Bienvenidos a la Página Cristiana</h1>
+        <p>En esta página puedes encontrar algunos problemas comunes que tienen los cristianos, y aquí te damos versículos de la Biblia que te pueden ayudar con esos pensamientos.</p>
+
+        <ul class="problem-list">
+            <li onclick="showVerses('Ansioso')">Ansioso</li>
+            <li onclick="showVerses('Amargado o en crisis')">Amargado o en crisis</li>
+            <li onclick="showVerses('Angustiado')">Angustiado</li>
+            <li onclick="showVerses('Cansado')">Cansado</li>
+            <li onclick="showVerses('Con dificultades')">Con dificultades</li>
+            <li onclick="showVerses('Con miedo')">Con miedo</li>
+            <li onclick="showVerses('Derrotado')">Derrotado</li>
+            <li onclick="showVerses('Desalentado')">Desalentado</li>
+            <li onclick="showVerses('Deprimido')">Deprimido</li>
+            <li onclick="showVerses('Dudando')">Dudando</li>
+            <li onclick="showVerses('Enfermo o con dolor')">Enfermo o con dolor</li>
+            <li onclick="showVerses('Enfrentando una crisis')">Enfrentando una crisis</li>
+        </ul>
+
+        <div class="result" id="result"></div>
+    </div>
+
+    <script>
+        function showVerses(problema) {
+            let resultDiv = document.getElementById('result');
+            let verses = '';
+
+            switch(problema) {
+                case 'Ansioso':
+                    verses = `
+                        <p>Ve a Salmos 46</p>
+                        <p>Ve a Mateo 6:19</p>
+                        <p>Ve a Filipenses 4:6</p>
+                        <p>Ve a I Pedro 5:6-7</p>
+                    `;
+                    break;
+                case 'Amargado o en crisis':
+                    verses = `<p>Ve a I Corintios 13</p>`;
+                    break;
+                case 'Angustiado':
+                    verses = `<p>Ve a Mateo 5:4 y 2 Corintios 1:3-4</p>`;
+                    break;
+                case 'Cansado':
+                    verses = `
+                        <p>Ve a Salmo 46</p>
+                        <p>Ve a Mateo 11:28-30</p>
+                        <p>Ve a I Corintios 15:58</p>
+                        <p>Ve a Gálatas 6:9-10</p>
+                    `;
+                    break;
+                case 'Con dificultades':
+                    verses = `<p>Ve a Salmo 16, Salmo 31, Juan 14:1-4, Hebreos 7:25</p>`;
+                    break;
+                case 'Con miedo':
+                    verses = `<p>Ve a Salmo 34:4, Mateo 10:28, 2 Timoteo 1:7, Hebreos 13:5-6</p>`;
+                    break;
+                case 'Derrotado':
+                    verses = `<p>Ve a Romanos 8:31-39</p>`;
+                    break;
+                case 'Desalentado':
+                    verses = `
+                        <p>Ve a Salmo 23, Salmo 42:6-11, Salmo 55:22</p>
+                        <p>Ve a Mateo 5:11-12, 2 Corintios 4:8-18, Filipenses 4:4-7</p>
+                    `;
+                    break;
+                case 'Deprimido':
+                    verses = `<p>Ve a Salmo 34</p>`;
+                    break;
+                case 'Dudando':
+                    verses = `<p>Ve a Mateo 8:26 y Hebreos 11</p>`;
+                    break;
+                case 'Enfermo o con dolor':
+                    verses = `<p>Ve a Salmo 38, Mateo 26:39, Romanos 5:3-5, 2 Corintios 12:9-10, I Pedro 4:12,12,19</p>`;
+                    break;
+                case 'Enfrentando una crisis':
+                    verses = `<p>Ve a Salmo 121, Mateo 6:25-34, Hebreos 4:16</p>`;
+                    break;
+                default:
+                    verses = `<p>Selecciona un problema de la lista para obtener versículos bíblicos que te ayudarán.</p>`;
+            }
+
+            resultDiv.innerHTML = `
+                <div class="verses">
+                    ${verses}
+                    <p>Lee estos versículos y te ayudarán con tu problema.</p>
+                </div>
+            `;
+        }
+    </script>
+</body>
+</html>
